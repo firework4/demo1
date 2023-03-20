@@ -1,0 +1,24 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/tes1?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: lzhabc881
+    #这个参数适用于mysql8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  #解决knife4j 启动报错
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+# Mybatis配置
+mybatis:
+  # 配置XML映射文件中指定的实体类别名路径
+  type-aliases-package: com.example.mytes.pojo
+  # 配置MyBatis的xml配置文件路径 ，路径要具体到mapper目录，这种配置方式，路径是在/resources/mapper目录下
+  mapper-locations: classpath:/mapper/*.xml
+  # 开启驼峰uName自动映射到u_name
+  map-underscore-to-camel-case: true
+
+
