@@ -20,5 +20,8 @@ mybatis:
   mapper-locations: classpath:/mapper/*.xml
   # 开启驼峰uName自动映射到u_name
   map-underscore-to-camel-case: true
-
-
+  #解决knife4j 启动报错
+  spring:
+    mvc:
+     pathmatch:
+      matching-strategy: ant_path_matcher
